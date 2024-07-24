@@ -15,18 +15,22 @@ public class Method_01_Test {
 
     // tag::IDao[]
     interface IDao {
-        List<Person> findAll();
+        
+    	public List<Person> findAll();
 
         // TODO créer une méthode int sumAge()
         // TODO Cette méthode retourne le résultat de l'addition des ages des personnes
         
         default int sumAge() {
+        	
         	int somme = 0;
         	for (Person p: findAll()) {
         		somme+=p.getAge();
         	}
+        	
         	return somme;
         }
+        
     }
     // end::IDao[]
 
